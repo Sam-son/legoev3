@@ -194,6 +194,7 @@ namespace Lego.Ev3.Core
 
 		private async Task PollSensorsAsync()
 		{
+            if (BrickChanged.GetInvocationList().Length == 0) return;
 			bool changed = false;
 			const int responseSize = 11;
 			int index = 0;
